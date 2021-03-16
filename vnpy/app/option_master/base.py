@@ -1,13 +1,11 @@
 from datetime import datetime, timedelta
-from typing import Dict, List, Callable
 from types import ModuleType
+from typing import Dict, List, Callable
 
-from vnpy.trader.object import ContractData, TickData, TradeData
 from vnpy.trader.constant import Exchange, OptionType, Direction, Offset
 from vnpy.trader.converter import PositionHolding
-
+from vnpy.trader.object import ContractData, TickData, TradeData
 from .time import calculate_days_to_expiry, ANNUAL_DAYS
-
 
 APP_NAME = "OptionMaster"
 

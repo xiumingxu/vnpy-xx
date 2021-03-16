@@ -1,25 +1,24 @@
-from typing import Dict, List, Tuple
 from copy import copy
 from functools import partial
+from typing import Dict, List, Tuple
 
 from scipy import interpolate
 
 from vnpy.event import Event
-from vnpy.trader.ui import QtWidgets, QtCore, QtGui
 from vnpy.trader.event import EVENT_TICK, EVENT_TIMER, EVENT_TRADE
 from vnpy.trader.object import TickData, TradeData
+from vnpy.trader.ui import QtWidgets, QtCore, QtGui
 from vnpy.trader.utility import save_json, load_json
-
-from ..engine import OptionEngine
+from .monitor import (
+    MonitorCell, IndexCell, BidCell, AskCell, PosCell,
+    COLOR_WHITE, COLOR_BLACK
+)
 from ..base import (
     EVENT_OPTION_ALGO_PRICING,
     EVENT_OPTION_ALGO_STATUS,
     EVENT_OPTION_ALGO_LOG
 )
-from .monitor import (
-    MonitorCell, IndexCell, BidCell, AskCell, PosCell,
-    COLOR_WHITE, COLOR_BLACK
-)
+from ..engine import OptionEngine
 
 
 class AlgoSpinBox(QtWidgets.QSpinBox):

@@ -1,6 +1,6 @@
+from vnpy.trader.constant import OrderType, Offset, Direction
 from vnpy.trader.engine import BaseEngine
 from vnpy.trader.object import TickData, OrderData, TradeData
-from vnpy.trader.constant import OrderType, Offset, Direction
 from vnpy.trader.utility import virtual
 
 

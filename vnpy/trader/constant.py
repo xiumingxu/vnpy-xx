@@ -78,22 +78,24 @@ class Exchange(Enum):
     """
     Exchange.
     """
-    # Chinese
-    CFFEX = "CFFEX"         # China Financial Futures Exchange
-    SHFE = "SHFE"           # Shanghai Futures Exchange
-    CZCE = "CZCE"           # Zhengzhou Commodity Exchange
-    DCE = "DCE"             # Dalian Commodity Exchange
-    INE = "INE"             # Shanghai International Energy Exchange
-    SSE = "SSE"             # Shanghai Stock Exchange
-    SZSE = "SZSE"           # Shenzhen Stock Exchange
-    SGE = "SGE"             # Shanghai Gold Exchange
-    WXE = "WXE"             # Wuxi Steel Exchange
-    CFETS = "CFETS"         # China Foreign Exchange Trade System
+    # # Chinese
+    # CFFEX = "CFFEX"         # China Financial Futures Exchange
+    # SHFE = "SHFE"           # Shanghai Futures Exchange
+    # CZCE = "CZCE"           # Zhengzhou Commodity Exchange
+    # DCE = "DCE"             # Dalian Commodity Exchange
+    # INE = "INE"             # Shanghai International Energy Exchange
+    # SSE = "SSE"             # Shanghai Stock Exchange
+    # SZSE = "SZSE"           # Shenzhen Stock Exchange
+    # SGE = "SGE"             # Shanghai Gold Exchange
+    # WXE = "WXE"             # Wuxi Steel Exchange
+    # CFETS = "CFETS"         # China Foreign Exchange Trade System
 
     # Global
-    SMART = "SMART"         # Smart Router for US stocks
+    NASDAQ = "NASDAQ"  # Nasdaq Exchange
     NYSE = "NYSE"           # New York Stock Exchnage
-    NASDAQ = "NASDAQ"       # Nasdaq Exchange
+    SMART = "SMART"         # Smart Router for US stocks
+
+
     ARCA = "ARCA"           # ARCA Exchange
     EDGEA = "EDGEA"         # Direct Edge Exchange
     ISLAND = "ISLAND"       # Nasdaq Island ECN
@@ -152,8 +154,8 @@ class Interval(Enum):
     """
     Interval of bar data.
     """
+    DAILY = "d"
     MINUTE = "1m"
     HOUR = "1h"
-    DAILY = "d"
     WEEKLY = "w"
     TICK = "tick"

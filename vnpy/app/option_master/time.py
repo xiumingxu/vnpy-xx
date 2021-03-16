@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta
+
 import trading_calendars
 
 ANNUAL_DAYS = 240

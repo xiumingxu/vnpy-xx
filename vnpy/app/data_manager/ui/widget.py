@@ -1,12 +1,11 @@
-from typing import Tuple, Dict
-from functools import partial
 from datetime import datetime, timedelta
+from functools import partial
+from typing import Tuple, Dict
 
-from vnpy.trader.ui import QtWidgets, QtCore
-from vnpy.trader.engine import MainEngine, EventEngine
 from vnpy.trader.constant import Interval, Exchange
 from vnpy.trader.database import DB_TZ
-
+from vnpy.trader.engine import MainEngine, EventEngine
+from vnpy.trader.ui import QtWidgets, QtCore
 from ..engine import APP_NAME, ManagerEngine
 
 
@@ -588,5 +587,6 @@ class DownloadDialog(QtWidgets.QDialog):
         if interval == Interval.TICK:
             count = self.engine.download_tick_data(symbol, exchange, start)
         else:
-            count = self.engine.download_bar_data(symbol, exchange, interval, start)
+            # count = self.engine.download_bar_data(symbol, exchange, interval, start)
+            count = self.engine.download_data_from_tiingo(symbol, interval, exchange,start)
         QtWidgets.QMessageBox.information(self, "下载结束", f"下载总数据量：{count}条")

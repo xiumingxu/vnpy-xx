@@ -62,7 +62,7 @@ class RqdataClient:
                 max_pool_size=1
             )
 
-            df = rqdata_all_instruments()
+            df = rqdata_all_instruments(market='us')
             self.symbols = df["order_book_id"].values
         except (RuntimeError, AuthenticationFailed):
             return False

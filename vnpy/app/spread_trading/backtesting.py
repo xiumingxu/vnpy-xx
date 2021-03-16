@@ -3,16 +3,15 @@ from datetime import date, datetime
 from typing import Callable, Type
 
 import numpy as np
-from pandas import DataFrame
 import plotly.graph_objects as go
+from pandas import DataFrame
 from plotly.subplots import make_subplots
 
 from vnpy.trader.constant import (Direction, Offset, Exchange,
                                   Interval, Status)
 from vnpy.trader.object import TradeData, BarData, TickData
-
-from .template import SpreadStrategyTemplate, SpreadAlgoTemplate
 from .base import SpreadData, BacktestingMode, load_bar_data, load_tick_data
+from .template import SpreadStrategyTemplate, SpreadAlgoTemplate
 
 
 class BacktestingEngine:

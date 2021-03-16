@@ -1,11 +1,10 @@
+from csv import DictReader
 from functools import partial
 from typing import Dict
-from csv import DictReader
 
 from vnpy.event import Event, EventEngine
 from vnpy.trader.engine import MainEngine
 from vnpy.trader.ui import QtCore, QtWidgets
-
 from ..engine import (APP_NAME, EVENT_RADAR_LOG, EVENT_RADAR_RULE,
                       EVENT_RADAR_UPDATE, RadarEngine)
 

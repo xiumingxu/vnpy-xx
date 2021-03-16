@@ -1,7 +1,8 @@
 from pathlib import Path
+
 from vnpy.trader.app import BaseApp
-from .engine import ScriptEngine, APP_NAME
 from .cli import init_cli_trading
+from .engine import ScriptEngine, APP_NAME
 
 
 class ScriptTraderApp(BaseApp):

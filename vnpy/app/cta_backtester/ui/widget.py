@@ -1,20 +1,19 @@
 import csv
-from datetime import datetime, timedelta
 from copy import copy
+from datetime import datetime, timedelta
 
 import numpy as np
 import pyqtgraph as pg
 
+from vnpy.chart import ChartWidget, CandleItem, VolumeItem
+from vnpy.event import Event, EventEngine
 from vnpy.trader.constant import Interval, Direction, Exchange
+from vnpy.trader.database import DB_TZ
 from vnpy.trader.engine import MainEngine
 from vnpy.trader.ui import QtCore, QtWidgets, QtGui
-from vnpy.trader.ui.widget import BaseMonitor, BaseCell, DirectionCell, EnumCell
 from vnpy.trader.ui.editor import CodeEditor
-from vnpy.event import Event, EventEngine
-from vnpy.chart import ChartWidget, CandleItem, VolumeItem
+from vnpy.trader.ui.widget import BaseMonitor, BaseCell, DirectionCell, EnumCell
 from vnpy.trader.utility import load_json, save_json
-from vnpy.trader.database import DB_TZ
-
 from ..engine import (
     APP_NAME,
     EVENT_BACKTESTER_LOG,

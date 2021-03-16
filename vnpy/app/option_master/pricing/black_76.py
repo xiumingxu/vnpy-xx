@@ -1,6 +1,7 @@
-from scipy import stats
 from math import log, pow, sqrt, exp
 from typing import Tuple
+
+from scipy import stats
 
 cdf = stats.norm.cdf
 pdf = stats.norm.pdf

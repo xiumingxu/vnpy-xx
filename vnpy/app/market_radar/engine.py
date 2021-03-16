@@ -1,16 +1,15 @@
 import traceback
-from typing import Dict, Set, Any
-from datetime import datetime
 from collections import defaultdict
+from datetime import datetime
+from typing import Dict, Set, Any
 
 from vnpy.event import Event, EventEngine
-from vnpy.trader.utility import save_json, load_json
 from vnpy.trader.engine import BaseEngine, MainEngine
+from vnpy.trader.event import EVENT_TICK, EVENT_CONTRACT
 from vnpy.trader.object import (
     SubscribeRequest, ContractData, TickData, LogData,
 )
-from vnpy.trader.event import EVENT_TICK, EVENT_CONTRACT
-
+from vnpy.trader.utility import save_json, load_json
 
 APP_NAME = "MarketRadar"
 

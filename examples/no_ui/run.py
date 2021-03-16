@@ -7,8 +7,8 @@ from logging import INFO
 from vnpy.event import EventEngine
 from vnpy.trader.setting import SETTINGS
 from vnpy.trader.engine import MainEngine
-
-from vnpy.gateway.ctp import CtpGateway
+from vnpy.gateway.futu import FutuGateway
+# from vnpy.gateway.ctp import CtpGateway
 from vnpy.app.cta_strategy import CtaStrategyApp
 from vnpy.app.cta_strategy.base import EVENT_CTA_LOG
 
@@ -61,7 +61,7 @@ def run_child():
 
     event_engine = EventEngine()
     main_engine = MainEngine(event_engine)
-    main_engine.add_gateway(CtpGateway)
+    main_engine.add_gateway(FutuGateway)
     cta_engine = main_engine.add_app(CtaStrategyApp)
     main_engine.write_log("主引擎创建成功")
 

@@ -1,7 +1,7 @@
 from typing import Dict, List, TYPE_CHECKING
 
-from vnpy.trader.object import TradeData
 from vnpy.trader.constant import Direction
+from vnpy.trader.object import TradeData
 
 if TYPE_CHECKING:
     from .engine import PortfolioEngine

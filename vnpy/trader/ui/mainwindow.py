@@ -38,6 +38,7 @@ class MainWindow(QtWidgets.QMainWindow):
     def __init__(self, main_engine: MainEngine, event_engine: EventEngine):
         """"""
         super(MainWindow, self).__init__()
+
         self.main_engine: MainEngine = main_engine
         self.event_engine: EventEngine = event_engine
 

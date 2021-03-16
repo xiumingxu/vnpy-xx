@@ -1,28 +1,28 @@
-import traceback
 import importlib
 import os
-from typing import List, Dict, Set, Callable, Any, Type
+import traceback
 from collections import defaultdict
 from copy import copy
-from pathlib import Path
 from datetime import datetime, timedelta
+from pathlib import Path
+from typing import List, Dict, Set, Callable, Any, Type
 
 from vnpy.event import EventEngine, Event
+from vnpy.trader.constant import (
+    Direction, Offset, OrderType, Interval
+)
+from vnpy.trader.converter import OffsetConverter
 from vnpy.trader.engine import BaseEngine, MainEngine
 from vnpy.trader.event import (
     EVENT_TICK, EVENT_POSITION, EVENT_CONTRACT,
     EVENT_ORDER, EVENT_TRADE, EVENT_TIMER
 )
-from vnpy.trader.utility import load_json, save_json
 from vnpy.trader.object import (
     TickData, ContractData, LogData,
     SubscribeRequest, OrderRequest
 )
-from vnpy.trader.constant import (
-    Direction, Offset, OrderType, Interval
-)
-from vnpy.trader.converter import OffsetConverter
-
+from vnpy.trader.utility import load_json, save_json
+from .algo import SpreadTakerAlgo
 from .base import (
     LegData, SpreadData, AdvancedSpreadData,
     EVENT_SPREAD_DATA, EVENT_SPREAD_POS,
@@ -31,8 +31,6 @@ from .base import (
     load_bar_data, load_tick_data
 )
 from .template import SpreadAlgoTemplate, SpreadStrategyTemplate
-from .algo import SpreadTakerAlgo
-
 
 APP_NAME = "SpreadTrading"
 
@@ -740,7 +738,7 @@ class SpreadStrategyEngine:
         """
         path1 = Path(__file__).parent.joinpath("strategies")
         self.load_strategy_class_from_folder(
-            path1, "vnpy.app.spread_trading.strategies")
+            path1, "vnpy-xx.app.spread_trading.strategies")
 
         path2 = Path.cwd().joinpath("strategies")
         self.load_strategy_class_from_folder(path2, "strategies")

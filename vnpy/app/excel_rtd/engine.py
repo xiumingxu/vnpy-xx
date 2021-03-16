@@ -5,9 +5,8 @@ from typing import Set
 from vnpy.event import Event, EventEngine
 from vnpy.rpc import RpcServer
 from vnpy.trader.engine import BaseEngine, MainEngine
-from vnpy.trader.object import TickData, LogData, SubscribeRequest
 from vnpy.trader.event import EVENT_TICK
-
+from vnpy.trader.object import TickData, LogData, SubscribeRequest
 
 APP_NAME = "ExcelRtd"
 

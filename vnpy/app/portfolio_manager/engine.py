@@ -1,5 +1,5 @@
-from typing import Dict, Set
 from datetime import datetime
+from typing import Dict, Set
 
 from vnpy.event import Event
 from vnpy.trader.engine import (
@@ -15,9 +15,7 @@ from vnpy.trader.event import (
 )
 from vnpy.trader.object import ContractData, OrderData, TradeData, SubscribeRequest
 from vnpy.trader.utility import load_json, save_json
-
 from .base import ContractResult, PortfolioResult
-
 
 APP_NAME = "PortfolioManager"
 

@@ -112,15 +112,15 @@ def get_ext_modules():
         runtime_library_dirs = ["$ORIGIN"]
 
     vnctpmd = Extension(
-        "vnpy.api.ctp.vnctpmd",
+        "vnpy-xx.api.ctp.vnctpmd",
         [
-            "vnpy/api/ctp/vnctp/vnctpmd/vnctpmd.cpp",
+            "vnpy-xx/api/ctp/vnctp/vnctpmd/vnctpmd.cpp",
         ],
-        include_dirs=["vnpy/api/ctp/include",
-                      "vnpy/api/ctp/vnctp"],
+        include_dirs=["vnpy-xx/api/ctp/include",
+                      "vnpy-xx/api/ctp/vnctp"],
         define_macros=[],
         undef_macros=[],
-        library_dirs=["vnpy/api/ctp/libs", "vnpy/api/ctp"],
+        library_dirs=["vnpy-xx/api/ctp/libs", "vnpy-xx/api/ctp"],
         libraries=["thostmduserapi_se", "thosttraderapi_se"],
         extra_compile_args=compiler_flags,
         extra_link_args=extra_link_args,
@@ -130,15 +130,15 @@ def get_ext_modules():
     )
 
     vnctptd = Extension(
-        "vnpy.api.ctp.vnctptd",
+        "vnpy-xx.api.ctp.vnctptd",
         [
-            "vnpy/api/ctp/vnctp/vnctptd/vnctptd.cpp",
+            "vnpy-xx/api/ctp/vnctp/vnctptd/vnctptd.cpp",
         ],
-        include_dirs=["vnpy/api/ctp/include",
-                      "vnpy/api/ctp/vnctp"],
+        include_dirs=["vnpy-xx/api/ctp/include",
+                      "vnpy-xx/api/ctp/vnctp"],
         define_macros=[],
         undef_macros=[],
-        library_dirs=["vnpy/api/ctp/libs", "vnpy/api/ctp"],
+        library_dirs=["vnpy-xx/api/ctp/libs", "vnpy-xx/api/ctp"],
         libraries=["thostmduserapi_se", "thosttraderapi_se"],
         extra_compile_args=compiler_flags,
         extra_link_args=extra_link_args,
@@ -148,15 +148,15 @@ def get_ext_modules():
     )
 
     vnxtpmd = Extension(
-        "vnpy.api.xtp.vnxtpmd",
+        "vnpy-xx.api.xtp.vnxtpmd",
         [
-            "vnpy/api/xtp/vnxtp/vnxtpmd/vnxtpmd.cpp",
+            "vnpy-xx/api/xtp/vnxtp/vnxtpmd/vnxtpmd.cpp",
         ],
-        include_dirs=["vnpy/api/xtp/include",
-                      "vnpy/api/xtp/vnxtp"],
+        include_dirs=["vnpy-xx/api/xtp/include",
+                      "vnpy-xx/api/xtp/vnxtp"],
         define_macros=[],
         undef_macros=[],
-        library_dirs=["vnpy/api/xtp/libs", "vnpy/api/xtp"],
+        library_dirs=["vnpy-xx/api/xtp/libs", "vnpy-xx/api/xtp"],
         libraries=["xtptraderapi", "xtpquoteapi"],
         extra_compile_args=compiler_flags,
         extra_link_args=extra_link_args,
@@ -166,15 +166,15 @@ def get_ext_modules():
     )
 
     vnxtptd = Extension(
-        "vnpy.api.xtp.vnxtptd",
+        "vnpy-xx.api.xtp.vnxtptd",
         [
-            "vnpy/api/xtp/vnxtp/vnxtptd/vnxtptd.cpp",
+            "vnpy-xx/api/xtp/vnxtp/vnxtptd/vnxtptd.cpp",
         ],
-        include_dirs=["vnpy/api/xtp/include",
-                      "vnpy/api/xtp/vnxtp"],
+        include_dirs=["vnpy-xx/api/xtp/include",
+                      "vnpy-xx/api/xtp/vnxtp"],
         define_macros=[],
         undef_macros=[],
-        library_dirs=["vnpy/api/xtp/libs", "vnpy/api/xtp"],
+        library_dirs=["vnpy-xx/api/xtp/libs", "vnpy-xx/api/xtp"],
         libraries=["xtptraderapi", "xtpquoteapi"],
         extra_compile_args=compiler_flags,
         extra_link_args=extra_link_args,
@@ -184,15 +184,15 @@ def get_ext_modules():
     )
 
     vnksgoldmd = Extension(
-        "vnpy.api.ksgold.vnksgoldmd",
+        "vnpy-xx.api.ksgold.vnksgoldmd",
         [
-            "vnpy/api/ksgold/vnksgold/vnksgoldmd/vnksgoldmd.cpp",
+            "vnpy-xx/api/ksgold/vnksgold/vnksgoldmd/vnksgoldmd.cpp",
         ],
-        include_dirs=["vnpy/api/ksgold/include",
-                      "vnpy/api/ksgold/vnksgold"],
+        include_dirs=["vnpy-xx/api/ksgold/include",
+                      "vnpy-xx/api/ksgold/vnksgold"],
         define_macros=[],
         undef_macros=[],
-        library_dirs=["vnpy/api/ksgold/libs", "vnpy/api/ksgold"],
+        library_dirs=["vnpy-xx/api/ksgold/libs", "vnpy-xx/api/ksgold"],
         libraries=["ksgoldquotmarketdataapi", "ksgoldtraderapi"],
         extra_compile_args=compiler_flags,
         extra_link_args=extra_link_args,
@@ -202,15 +202,15 @@ def get_ext_modules():
     )
 
     vnksgoldtd = Extension(
-        "vnpy.api.ksgold.vnksgoldtd",
+        "vnpy-xx.api.ksgold.vnksgoldtd",
         [
-            "vnpy/api/ksgold/vnksgold/vnksgoldtd/vnksgoldtd.cpp",
+            "vnpy-xx/api/ksgold/vnksgold/vnksgoldtd/vnksgoldtd.cpp",
         ],
-        include_dirs=["vnpy/api/ksgold/include",
-                      "vnpy/api/ksgold/vnksgold"],
+        include_dirs=["vnpy-xx/api/ksgold/include",
+                      "vnpy-xx/api/ksgold/vnksgold"],
         define_macros=[],
         undef_macros=[],
-        library_dirs=["vnpy/api/ksgold/libs", "vnpy/api/ksgold"],
+        library_dirs=["vnpy-xx/api/ksgold/libs", "vnpy-xx/api/ksgold"],
         libraries=["ksgoldquotmarketdataapi", "ksgoldtraderapi"],
         extra_compile_args=compiler_flags,
         extra_link_args=extra_link_args,
@@ -220,15 +220,15 @@ def get_ext_modules():
     )
 
     vnsgitmd = Extension(
-        "vnpy.api.sgit.vnsgitmd",
+        "vnpy-xx.api.sgit.vnsgitmd",
         [
-            "vnpy/api/sgit/vnsgit/vnsgitmd/vnsgitmd.cpp",
+            "vnpy-xx/api/sgit/vnsgit/vnsgitmd/vnsgitmd.cpp",
         ],
-        include_dirs=["vnpy/api/sgit/include",
-                      "vnpy/api/sgit/vnsgit"],
+        include_dirs=["vnpy-xx/api/sgit/include",
+                      "vnpy-xx/api/sgit/vnsgit"],
         define_macros=[],
         undef_macros=[],
-        library_dirs=["vnpy/api/sgit/libs", "vnpy/api/sgit"],
+        library_dirs=["vnpy-xx/api/sgit/libs", "vnpy-xx/api/sgit"],
         libraries=["crypto", "sgitquotapi", "sgittradeapi", "ssl"],
         extra_compile_args=compiler_flags,
         extra_link_args=extra_link_args,
@@ -238,15 +238,15 @@ def get_ext_modules():
     )
 
     vnsgittd = Extension(
-        "vnpy.api.sgit.vnsgittd",
+        "vnpy-xx.api.sgit.vnsgittd",
         [
-            "vnpy/api/sgit/vnsgit/vnsgittd/vnsgittd.cpp",
+            "vnpy-xx/api/sgit/vnsgit/vnsgittd/vnsgittd.cpp",
         ],
-        include_dirs=["vnpy/api/sgit/include",
-                      "vnpy/api/sgit/vnsgit"],
+        include_dirs=["vnpy-xx/api/sgit/include",
+                      "vnpy-xx/api/sgit/vnsgit"],
         define_macros=[],
         undef_macros=[],
-        library_dirs=["vnpy/api/sgit/libs", "vnpy/api/sgit"],
+        library_dirs=["vnpy-xx/api/sgit/libs", "vnpy-xx/api/sgit"],
         libraries=["crypto", "sgitquotapi", "sgittradeapi", "ssl"],
         extra_compile_args=compiler_flags,
         extra_link_args=extra_link_args,
@@ -256,12 +256,12 @@ def get_ext_modules():
     )
 
     vnnhmd = Extension(
-        "vnpy.api.nh.vnnhmd",
+        "vnpy-xx.api.nh.vnnhmd",
         [
-            "vnpy/api/nh/vnnh/vnnhmd/vnnhmd.cpp",
+            "vnpy-xx/api/nh/vnnh/vnnhmd/vnnhmd.cpp",
         ],
-        include_dirs=["vnpy/api/nh/include", "vnpy/api/nh/vnnh"],
-        library_dirs=["vnpy/api/nh/libs", "vnpy/api/nh"],
+        include_dirs=["vnpy-xx/api/nh/include", "vnpy-xx/api/nh/vnnh"],
+        library_dirs=["vnpy-xx/api/nh/libs", "vnpy-xx/api/nh"],
         libraries=["nhmdapi"],
         extra_compile_args=compiler_flags,
         extra_link_args=extra_link_args,
@@ -270,12 +270,12 @@ def get_ext_modules():
     )
 
     vnnhfutures = Extension(
-        "vnpy.api.nh.vnnhfutures",
+        "vnpy-xx.api.nh.vnnhfutures",
         [
-            "vnpy/api/nh/vnnh/vnnhfutures/vnnhfutures.cpp",
+            "vnpy-xx/api/nh/vnnh/vnnhfutures/vnnhfutures.cpp",
         ],
-        include_dirs=["vnpy/api/nh/include", "vnpy/api/nh/vnnh"],
-        library_dirs=["vnpy/api/nh/libs", "vnpy/api/nh"],
+        include_dirs=["vnpy-xx/api/nh/include", "vnpy-xx/api/nh/vnnh"],
+        library_dirs=["vnpy-xx/api/nh/libs", "vnpy-xx/api/nh"],
         libraries=["nhtd2traderapi"],
         extra_compile_args=compiler_flags,
         extra_link_args=extra_link_args,
@@ -284,12 +284,12 @@ def get_ext_modules():
     )
 
     vnnhstock = Extension(
-        "vnpy.api.nh.vnnhstock",
+        "vnpy-xx.api.nh.vnnhstock",
         [
-            "vnpy/api/nh/vnnh/vnnhstock/vnnhstock.cpp",
+            "vnpy-xx/api/nh/vnnh/vnnhstock/vnnhstock.cpp",
         ],
-        include_dirs=["vnpy/api/nh/include", "vnpy/api/nh/vnnh"],
-        library_dirs=["vnpy/api/nh/libs", "vnpy/api/nh"],
+        include_dirs=["vnpy-xx/api/nh/include", "vnpy-xx/api/nh/vnnh"],
+        library_dirs=["vnpy-xx/api/nh/libs", "vnpy-xx/api/nh"],
         libraries=["nhtdstockapi"],
         extra_compile_args=compiler_flags,
         extra_link_args=extra_link_args,
@@ -341,7 +341,7 @@ if parallel:
         patch_distutils(int(parallel))
 
 setup(
-    name="vnpy",
+    name="vnpy-xx",
     version=get_version_string(),
     author="vn.py team",
     author_email="vn.py@foxmail.com",

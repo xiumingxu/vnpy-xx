@@ -2,9 +2,8 @@ from typing import Sequence, Type
 
 from vnpy.event import EventEngine, Event
 from vnpy.trader.engine import MainEngine
-from vnpy.trader.gateway import BaseGateway
 from vnpy.trader.event import EVENT_LOG
-
+from vnpy.trader.gateway import BaseGateway
 from .engine import ScriptEngine
 
 

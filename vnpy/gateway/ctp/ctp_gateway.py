@@ -7,8 +7,8 @@ from datetime import datetime
 from time import sleep
 
 from vnpy.api.ctp import (
-    MdApi,
-    TdApi,
+    # MdApi,
+    # TdApi,
     THOST_FTDC_OAS_Submitted,
     THOST_FTDC_OAS_Accepted,
     THOST_FTDC_OAS_Rejected,

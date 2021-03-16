@@ -1,24 +1,23 @@
 """"""
 
 import sys
-from threading import Thread
-from queue import Queue, Empty
 from copy import copy
+from queue import Queue, Empty
+from threading import Thread
 
+from vnpy.app.spread_trading.base import EVENT_SPREAD_DATA, SpreadData
 from vnpy.event import Event, EventEngine
-from vnpy.trader.engine import BaseEngine, MainEngine
 from vnpy.trader.constant import Exchange
+from vnpy.trader.database import database_manager
+from vnpy.trader.engine import BaseEngine, MainEngine
+from vnpy.trader.event import EVENT_TICK, EVENT_CONTRACT
 from vnpy.trader.object import (
     SubscribeRequest,
     TickData,
     BarData,
     ContractData
 )
-from vnpy.trader.event import EVENT_TICK, EVENT_CONTRACT
 from vnpy.trader.utility import load_json, save_json, BarGenerator
-from vnpy.trader.database import database_manager
-from vnpy.app.spread_trading.base import EVENT_SPREAD_DATA, SpreadData
-
 
 APP_NAME = "DataRecorder"
 

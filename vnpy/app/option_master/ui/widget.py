@@ -1,21 +1,20 @@
 from typing import Dict
 
 from vnpy.event import EventEngine, Event
-from vnpy.trader.engine import MainEngine
-from vnpy.trader.ui import QtWidgets, QtCore, QtGui
 from vnpy.trader.constant import Direction, Offset, OrderType
-from vnpy.trader.object import OrderRequest, ContractData, TickData
+from vnpy.trader.engine import MainEngine
 from vnpy.trader.event import EVENT_TICK
+from vnpy.trader.object import OrderRequest, ContractData, TickData
+from vnpy.trader.ui import QtWidgets, QtCore, QtGui
 from vnpy.trader.utility import get_digits
-
-from ..base import APP_NAME, EVENT_OPTION_NEW_PORTFOLIO
-from ..engine import OptionEngine, PRICING_MODELS
+from .chart import OptionVolatilityChart, ScenarioAnalysisChart
+from .manager import ElectronicEyeManager, PricingVolatilityManager
 from .monitor import (
     OptionMarketMonitor, OptionGreeksMonitor, OptionChainMonitor,
     MonitorCell
 )
-from .chart import OptionVolatilityChart, ScenarioAnalysisChart
-from .manager import ElectronicEyeManager, PricingVolatilityManager
+from ..base import APP_NAME, EVENT_OPTION_NEW_PORTFOLIO
+from ..engine import OptionEngine, PRICING_MODELS
 
 
 class OptionManager(QtWidgets.QWidget):

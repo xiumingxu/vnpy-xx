@@ -24,16 +24,23 @@ SETTINGS: Dict[str, Any] = {
     "email.sender": "",
     "email.receiver": "",
 
-    "rqdata.username": "",
-    "rqdata.password": "",
+    "rqdata.username": "+16692603794",
+    "rqdata.password": "19911111DX",
+
+    "iexdata.username": "+16692603794",
+    "iexdata.token": "pk_ad0de14828b64af9a9f1f022953a39b3",
+
+    "tiingo.token": "947d427079f7e6ee5163af80549c9b91afd8ad8f",
+
+
 
     "database.timezone": get_localzone().zone,
-    "database.driver": "sqlite",                # see database.Driver
-    "database.database": "database.db",         # for sqlite, use this as filepath
+    "database.driver": "mysql",                # see database.Driver
+    "database.database": "quant.xx",         # for sqlite, use this as filepath
     "database.host": "localhost",
     "database.port": 3306,
     "database.user": "root",
-    "database.password": "",
+    "database.password": "Einstein1991",
     "database.authentication_source": "admin",  # for mongodb
 
     "genus.parent_host": "",

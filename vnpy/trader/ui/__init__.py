@@ -30,16 +30,14 @@ def create_qapp(app_name: str = "VN Trader") -> QtWidgets.QApplication:
     Create Qt Application.
     """
     sys.excepthook = excepthook
-
     QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling)
-
     qapp = QtWidgets.QApplication(sys.argv)
     qapp.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
 
     font = QtGui.QFont(SETTINGS["font.family"], SETTINGS["font.size"])
     qapp.setFont(font)
 
-    icon = QtGui.QIcon(get_icon_path(__file__, "vnpy.ico"))
+    icon = QtGui.QIcon(get_icon_path(__file__, "vnpy-xx.ico"))
     qapp.setWindowIcon(icon)
 
     if "Windows" in platform.uname():

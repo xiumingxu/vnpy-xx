@@ -1,7 +1,6 @@
 from pathlib import Path
 
 from vnpy.trader.app import BaseApp
-
 from .engine import AlgoEngine, APP_NAME
 from .template import AlgoTemplate
 

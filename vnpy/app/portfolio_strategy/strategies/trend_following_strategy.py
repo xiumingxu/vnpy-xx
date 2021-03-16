@@ -1,9 +1,9 @@
-from typing import List, Dict
 from datetime import datetime
+from typing import List, Dict
 
 from vnpy.app.portfolio_strategy import StrategyTemplate, StrategyEngine
-from vnpy.trader.utility import BarGenerator, ArrayManager
 from vnpy.trader.object import TickData, BarData
+from vnpy.trader.utility import BarGenerator, ArrayManager
 
 
 class TrendFollowingStrategy(StrategyTemplate):

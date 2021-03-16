@@ -1,9 +1,8 @@
 from typing import TYPE_CHECKING, Set
 
-from vnpy.trader.object import TickData, OrderData, TradeData
 from vnpy.trader.constant import Direction, Offset
+from vnpy.trader.object import TickData, OrderData, TradeData
 from vnpy.trader.utility import round_to
-
 from .base import OptionData
 
 if TYPE_CHECKING:

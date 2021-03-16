@@ -303,3 +303,11 @@ vn.py使用Github托管其源代码，如果希望贡献代码请使用github的
 ## 版权说明
 
 MIT
+### 补充说明
+
+Data 下载
+
+xueqiu 
+ - npm webdriver-manager
+ - download
+

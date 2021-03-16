@@ -19,7 +19,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'vnpy'
+project = 'vnpy-xx'
 copyright = '2019, vn.py Team'
 author = 'vn.py Team'
 
@@ -87,12 +87,12 @@ html_theme = 'alabaster'
 # documentation.
 #
 html_theme_options = {
-    'logo': 'vnpy.ico',
+    'logo': 'vnpy-xx.ico',
     "base_bg": "inherit",
     "narrow_sidebar_bg": "inherit",
     'github_banner': True,
-    'github_user': 'vnpy',
-    'github_repo': 'vnpy',
+    'github_user': 'vnpy-xx',
+    'github_repo': 'vnpy-xx',
     'github_type': 'star',
     'description': (r"<div class='col-md-12'>"
                     r"<strong>VN.PY</strong>"
@@ -162,7 +162,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'vnpy.tex', 'vnpy Documentation',
+    (master_doc, 'vnpy-xx.tex', 'vnpy-xx Documentation',
      'vn.py Team', 'manual'),
 ]
 
@@ -171,7 +171,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'vnpy', 'vnpy Documentation',
+    (master_doc, 'vnpy-xx', 'vnpy-xx Documentation',
      [author], 1)
 ]
 
@@ -181,8 +181,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'vnpy', 'vnpy Documentation',
-     author, 'vnpy', 'One line description of project.',
+    (master_doc, 'vnpy-xx', 'vnpy-xx Documentation',
+     author, 'vnpy-xx', 'One line description of project.',
      'Miscellaneous'),
 ]
 

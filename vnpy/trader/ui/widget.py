@@ -1,7 +1,7 @@
 """
 Basic widgets for VN Trader.
 """
-
+import sys
 import csv
 import platform
 from enum import Enum

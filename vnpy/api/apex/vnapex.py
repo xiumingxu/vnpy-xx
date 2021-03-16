@@ -1,9 +1,7 @@
-from pathlib import Path
-
 from ctypes import (cdll, CFUNCTYPE,
                     c_bool, c_char_p, c_long, c_int,
                     c_void_p, create_string_buffer, byref)
-
+from pathlib import Path
 
 DLL_PATH = Path(__file__).parent.joinpath("FixApi.dll")
 APEX = cdll.LoadLibrary(str(DLL_PATH))

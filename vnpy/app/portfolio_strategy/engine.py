@@ -4,14 +4,30 @@ import importlib
 import os
 import traceback
 from collections import defaultdict
+from concurrent.futures import ThreadPoolExecutor
+from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Dict, List, Set, Tuple, Type, Any, Callable
-from datetime import datetime, timedelta
-from concurrent.futures import ThreadPoolExecutor
+
 from tzlocal import get_localzone
 
 from vnpy.event import Event, EventEngine
+from vnpy.trader.constant import (
+    Direction,
+    OrderType,
+    Interval,
+    Exchange,
+    Offset
+)
+from vnpy.trader.converter import OffsetConverter
+from vnpy.trader.database import database_manager
 from vnpy.trader.engine import BaseEngine, MainEngine
+from vnpy.trader.event import (
+    EVENT_TICK,
+    EVENT_ORDER,
+    EVENT_TRADE,
+    EVENT_POSITION
+)
 from vnpy.trader.object import (
     OrderRequest,
     SubscribeRequest,
@@ -24,24 +40,8 @@ from vnpy.trader.object import (
     BarData,
     ContractData
 )
-from vnpy.trader.event import (
-    EVENT_TICK,
-    EVENT_ORDER,
-    EVENT_TRADE,
-    EVENT_POSITION
-)
-from vnpy.trader.constant import (
-    Direction,
-    OrderType,
-    Interval,
-    Exchange,
-    Offset
-)
-from vnpy.trader.utility import load_json, save_json, extract_vt_symbol, round_to
 from vnpy.trader.rqdata import rqdata_client
-from vnpy.trader.converter import OffsetConverter
-from vnpy.trader.database import database_manager
-
+from vnpy.trader.utility import load_json, save_json, extract_vt_symbol, round_to
 from .base import (
     APP_NAME,
     EVENT_PORTFOLIO_LOG,
@@ -486,7 +486,7 @@ class StrategyEngine(BaseEngine):
         Load strategy class from source code.
         """
         path1 = Path(__file__).parent.joinpath("strategies")
-        self.load_strategy_class_from_folder(path1, "vnpy.app.portfolio_strategy.strategies")
+        self.load_strategy_class_from_folder(path1, "vnpy-xx.app.portfolio_strategy.strategies")
 
         path2 = Path.cwd().joinpath("strategies")
         self.load_strategy_class_from_folder(path2, "strategies")

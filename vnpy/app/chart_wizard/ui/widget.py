@@ -1,17 +1,17 @@
 from copy import copy
-from typing import Dict, List
 from datetime import datetime, timedelta
+from typing import Dict, List
+
 from tzlocal import get_localzone
 
-from vnpy.event import EventEngine, Event
 from vnpy.chart import ChartWidget, CandleItem, VolumeItem
+from vnpy.event import EventEngine, Event
+from vnpy.trader.constant import Interval
 from vnpy.trader.engine import MainEngine
-from vnpy.trader.ui import QtWidgets, QtCore
 from vnpy.trader.event import EVENT_TICK
 from vnpy.trader.object import TickData, BarData, SubscribeRequest
+from vnpy.trader.ui import QtWidgets, QtCore
 from vnpy.trader.utility import BarGenerator
-from vnpy.trader.constant import Interval
-
 from ..engine import APP_NAME, EVENT_CHART_HISTORY, ChartWizardEngine
 
 

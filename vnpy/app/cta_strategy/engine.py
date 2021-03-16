@@ -4,15 +4,32 @@ import importlib
 import os
 import traceback
 from collections import defaultdict
-from pathlib import Path
-from typing import Any, Callable
-from datetime import datetime, timedelta
 from concurrent.futures import ThreadPoolExecutor
 from copy import copy
+from datetime import datetime, timedelta
+from pathlib import Path
+from typing import Any, Callable
+
 from tzlocal import get_localzone
 
 from vnpy.event import Event, EventEngine
+from vnpy.trader.constant import (
+    Direction,
+    OrderType,
+    Interval,
+    Exchange,
+    Offset,
+    Status
+)
+from vnpy.trader.converter import OffsetConverter
+from vnpy.trader.database import database_manager
 from vnpy.trader.engine import BaseEngine, MainEngine
+from vnpy.trader.event import (
+    EVENT_TICK,
+    EVENT_ORDER,
+    EVENT_TRADE,
+    EVENT_POSITION
+)
 from vnpy.trader.object import (
     OrderRequest,
     SubscribeRequest,
@@ -22,25 +39,8 @@ from vnpy.trader.object import (
     BarData,
     ContractData
 )
-from vnpy.trader.event import (
-    EVENT_TICK,
-    EVENT_ORDER,
-    EVENT_TRADE,
-    EVENT_POSITION
-)
-from vnpy.trader.constant import (
-    Direction,
-    OrderType,
-    Interval,
-    Exchange,
-    Offset,
-    Status
-)
-from vnpy.trader.utility import load_json, save_json, extract_vt_symbol, round_to
 from vnpy.trader.rqdata import rqdata_client
-from vnpy.trader.converter import OffsetConverter
-from vnpy.trader.database import database_manager
-
+from vnpy.trader.utility import load_json, save_json, extract_vt_symbol, round_to
 from .base import (
     APP_NAME,
     EVENT_CTA_LOG,
@@ -52,7 +52,6 @@ from .base import (
     STOPORDER_PREFIX
 )
 from .template import CtaTemplate
-
 
 STOP_STATUS_MAP = {
     Status.SUBMITTING: StopOrderStatus.WAITING,

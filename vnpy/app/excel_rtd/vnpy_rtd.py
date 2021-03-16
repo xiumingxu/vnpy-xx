@@ -1,13 +1,12 @@
 """"""
 
-from typing import Dict, Set, Any
 from collections import defaultdict
+from typing import Dict, Set, Any
 
 from pyxll import RTD, xl_func
 
 from vnpy.rpc import RpcClient
 from vnpy.trader.object import TickData
-
 
 REQ_ADDRESS = "tcp://localhost:9001"
 SUB_ADDRESS = "tcp://localhost:9002"
@@ -95,7 +94,7 @@ class RtdClient(RpcClient):
 
 
 def init_client() -> None:
-    """Initialize vnpy rtd client"""
+    """Initialize vnpy-xx rtd client"""
     global rtd_client
     rtd_client = RtdClient()
     rtd_client.subscribe_topic("")

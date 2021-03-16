@@ -1,11 +1,9 @@
 from datetime import datetime
 
-
 from vnpy.event import Event, EventEngine
 from vnpy.trader.engine import MainEngine
-from vnpy.trader.ui import QtCore, QtWidgets
 from vnpy.trader.event import EVENT_CONTRACT
-
+from vnpy.trader.ui import QtCore, QtWidgets
 from ..engine import (
     APP_NAME,
     EVENT_RECORDER_LOG,

@@ -1,7 +1,7 @@
 """"""
 import importlib
-from typing import Dict
 import os
+from typing import Dict
 
 type_dict = {
     "uint8_t": "int",

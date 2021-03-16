@@ -1,20 +1,19 @@
 
 from vnpy.event import EventEngine, Event
+from vnpy.trader.constant import (Direction, Offset, OrderType)
 from vnpy.trader.engine import BaseEngine, MainEngine
 from vnpy.trader.event import (
     EVENT_TICK, EVENT_TIMER, EVENT_ORDER, EVENT_TRADE)
-from vnpy.trader.constant import (Direction, Offset, OrderType)
 from vnpy.trader.object import (SubscribeRequest, OrderRequest, LogData)
-from vnpy.trader.utility import load_json, save_json, round_to
 from vnpy.trader.setting import SETTINGS
-
-from .template import AlgoTemplate
+from vnpy.trader.utility import load_json, save_json, round_to
 from .base import (
     EVENT_ALGO_LOG, EVENT_ALGO_PARAMETERS,
     EVENT_ALGO_SETTING, EVENT_ALGO_VARIABLES,
     APP_NAME
 )
 from .genus import GenusClient
+from .template import AlgoTemplate
 
 
 class AlgoEngine(BaseEngine):

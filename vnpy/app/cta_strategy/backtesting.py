@@ -1,25 +1,24 @@
-from collections import defaultdict
-from datetime import date, datetime, timedelta
-from typing import Callable
-from itertools import product
-from functools import lru_cache
-from time import time
 import multiprocessing
 import random
 import traceback
+from collections import defaultdict
+from datetime import date, datetime, timedelta
+from functools import lru_cache
+from itertools import product
+from time import time
+from typing import Callable
 
 import numpy as np
-from pandas import DataFrame
 import plotly.graph_objects as go
-from plotly.subplots import make_subplots
 from deap import creator, base, tools, algorithms
+from pandas import DataFrame
+from plotly.subplots import make_subplots
 
 from vnpy.trader.constant import (Direction, Offset, Exchange,
                                   Interval, Status)
 from vnpy.trader.database import database_manager
 from vnpy.trader.object import OrderData, TradeData, BarData, TickData
 from vnpy.trader.utility import round_to
-
 from .base import (
     BacktestingMode,
     EngineType,
@@ -29,7 +28,6 @@ from .base import (
     INTERVAL_DELTA_MAP
 )
 from .template import CtaTemplate
-
 
 # Set deap algo
 creator.create("FitnessMax", base.Fitness, weights=(1.0,))

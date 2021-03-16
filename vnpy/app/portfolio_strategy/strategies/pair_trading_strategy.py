@@ -1,11 +1,11 @@
-from typing import List, Dict
 from datetime import datetime
+from typing import List, Dict
 
 import numpy as np
 
 from vnpy.app.portfolio_strategy import StrategyTemplate, StrategyEngine
-from vnpy.trader.utility import BarGenerator
 from vnpy.trader.object import TickData, BarData
+from vnpy.trader.utility import BarGenerator
 
 
 class PairTradingStrategy(StrategyTemplate):

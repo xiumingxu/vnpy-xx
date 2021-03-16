@@ -1,4 +1,5 @@
 from pathlib import Path
+
 from vnpy.trader.app import BaseApp
 from .engine import RiskManagerEngine, APP_NAME
 

@@ -1,26 +1,25 @@
 """"""
 
-from typing import Dict, List, Set
-from copy import copy
 from collections import defaultdict
+from copy import copy
+from typing import Dict, List, Set
 
-from vnpy.trader.object import (
-    LogData, ContractData, TickData,
-    OrderData, TradeData,
-    SubscribeRequest, OrderRequest
-)
 from vnpy.event import Event, EventEngine
+from vnpy.trader.constant import (
+    Product, Offset, Direction, OrderType, Exchange
+)
+from vnpy.trader.converter import OffsetConverter
 from vnpy.trader.engine import BaseEngine, MainEngine
 from vnpy.trader.event import (
     EVENT_TRADE, EVENT_TICK, EVENT_CONTRACT,
     EVENT_TIMER, EVENT_ORDER, EVENT_POSITION
 )
-from vnpy.trader.constant import (
-    Product, Offset, Direction, OrderType, Exchange
+from vnpy.trader.object import (
+    LogData, ContractData, TickData,
+    OrderData, TradeData,
+    SubscribeRequest, OrderRequest
 )
-from vnpy.trader.converter import OffsetConverter
 from vnpy.trader.utility import extract_vt_symbol, round_to, save_json, load_json
-
 from .base import (
     APP_NAME, CHAIN_UNDERLYING_MAP,
     EVENT_OPTION_NEW_PORTFOLIO,
@@ -28,6 +27,7 @@ from .base import (
     EVENT_OPTION_ALGO_STATUS, EVENT_OPTION_ALGO_LOG,
     InstrumentData, PortfolioData
 )
+
 try:
     from .pricing import black_76_cython as black_76
     from .pricing import binomial_tree_cython as binomial_tree

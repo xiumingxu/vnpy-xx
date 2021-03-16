@@ -6,8 +6,8 @@ from typing import Optional
 from vnpy.event import Event, EventEngine
 from vnpy.rpc import RpcServer
 from vnpy.trader.engine import BaseEngine, MainEngine
-from vnpy.trader.utility import load_json, save_json
 from vnpy.trader.object import LogData
+from vnpy.trader.utility import load_json, save_json
 
 APP_NAME = "RpcService"
 

@@ -1,18 +1,18 @@
 """"""
 
-import sys
 import importlib
+import sys
 import traceback
-from typing import Sequence, Any
-from pathlib import Path
 from datetime import datetime
+from pathlib import Path
 from threading import Thread
+from typing import Sequence, Any
 
 from pandas import DataFrame
 
 from vnpy.event import Event, EventEngine
-from vnpy.trader.engine import BaseEngine, MainEngine
 from vnpy.trader.constant import Direction, Offset, OrderType, Interval
+from vnpy.trader.engine import BaseEngine, MainEngine
 from vnpy.trader.object import (
     OrderRequest,
     HistoryRequest,
@@ -27,7 +27,6 @@ from vnpy.trader.object import (
     BarData
 )
 from vnpy.trader.rqdata import rqdata_client
-
 
 APP_NAME = "ScriptTrader"
 

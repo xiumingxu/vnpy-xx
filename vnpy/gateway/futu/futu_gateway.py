@@ -81,7 +81,7 @@ class FutuGateway(BaseGateway):
     """"""
 
     default_setting = {
-        "密码": "",
+        "密码": "2c2f74f18d090b35",
         "地址": "127.0.0.1",
         "端口": 11111,
         "市场": ["HK", "US"],

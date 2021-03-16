@@ -1,7 +1,7 @@
-from numpy import zeros, ndarray
 from math import exp, sqrt
 from typing import Tuple
 
+from numpy import zeros, ndarray
 
 DEFAULT_STEP = 15
 

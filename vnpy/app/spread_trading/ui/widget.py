@@ -3,8 +3,8 @@ Widget for spread trading.
 """
 
 from vnpy.event import EventEngine, Event
-from vnpy.trader.engine import MainEngine
 from vnpy.trader.constant import Direction, Offset
+from vnpy.trader.engine import MainEngine
 from vnpy.trader.ui import QtWidgets, QtCore, QtGui
 from vnpy.trader.ui.widget import (
     BaseMonitor, BaseCell,
@@ -12,7 +12,6 @@ from vnpy.trader.ui.widget import (
     TimeCell, PnlCell,
     DirectionCell, EnumCell,
 )
-
 from ..engine import (
     SpreadEngine,
     SpreadStrategyEngine,

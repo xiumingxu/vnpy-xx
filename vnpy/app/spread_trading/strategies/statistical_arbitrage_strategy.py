@@ -1,4 +1,3 @@
-from vnpy.trader.utility import BarGenerator, ArrayManager
 from vnpy.app.spread_trading import (
     SpreadStrategyTemplate,
     SpreadAlgoTemplate,
@@ -8,6 +7,7 @@ from vnpy.app.spread_trading import (
     TickData,
     BarData
 )
+from vnpy.trader.utility import BarGenerator, ArrayManager
 
 
 class StatisticalArbitrageStrategy(SpreadStrategyTemplate):

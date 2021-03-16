@@ -1,17 +1,16 @@
-from typing import List, Dict, Set, Union
-from copy import copy
 from collections import defaultdict
+from copy import copy
+from typing import List, Dict, Set, Union
 
 from vnpy.event import Event
-from vnpy.trader.ui import QtWidgets, QtCore, QtGui
-from vnpy.trader.ui.widget import COLOR_BID, COLOR_ASK, COLOR_BLACK
 from vnpy.trader.event import (
     EVENT_TICK, EVENT_TRADE, EVENT_POSITION, EVENT_TIMER
 )
+from vnpy.trader.ui import QtWidgets, QtCore, QtGui
+from vnpy.trader.ui.widget import COLOR_BID, COLOR_ASK, COLOR_BLACK
 from vnpy.trader.utility import round_to
-from ..engine import OptionEngine
 from ..base import UnderlyingData, OptionData, ChainData, PortfolioData
-
+from ..engine import OptionEngine
 
 COLOR_WHITE = QtGui.QColor("white")
 COLOR_POS = QtGui.QColor("yellow")

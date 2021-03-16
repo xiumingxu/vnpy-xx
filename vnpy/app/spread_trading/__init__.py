@@ -1,13 +1,6 @@
 from pathlib import Path
 
 from vnpy.trader.app import BaseApp
-from vnpy.trader.object import (
-    OrderData,
-    TradeData,
-    TickData,
-    BarData
-)
-
 from .engine import (
     SpreadEngine,
     APP_NAME,

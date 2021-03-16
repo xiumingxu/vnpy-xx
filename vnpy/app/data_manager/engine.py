@@ -1,14 +1,17 @@
 import csv
 from datetime import datetime
-from typing import List, Tuple
+from typing import List, Tuple, Optional
 
-from vnpy.trader.database import BarOverview, DB_TZ
-from vnpy.trader.engine import BaseEngine, MainEngine, EventEngine
+
+
 from vnpy.trader.constant import Interval, Exchange
+from vnpy.trader.database import BarOverview, DB_TZ
+from vnpy.trader.database import database_manager
+from vnpy.trader.engine import BaseEngine, MainEngine, EventEngine
 from vnpy.trader.object import BarData, HistoryRequest
 from vnpy.trader.rqdata import rqdata_client
-from vnpy.trader.database import database_manager
-
+from vnpy.trader.iexdata import iexdata_client
+from vnpy.trader.tiingodata import tiingo_client
 
 APP_NAME = "DataManager"
 
@@ -179,6 +182,7 @@ class ManagerEngine(BaseEngine):
         """
         Query bar data from RQData.
         """
+
         req = HistoryRequest(
             symbol=symbol,
             exchange=exchange,
@@ -234,3 +238,100 @@ class ManagerEngine(BaseEngine):
             return(len(data))
 
         return 0
+
+    def download_data_from_iex(
+            self,
+            symbol: str,
+            exchange: Exchange,
+            start: datetime):
+
+
+        # if not iexdata.inited:
+        #     iexdata.init()
+
+        # data = iexdata_client.query_tick_history(req)
+
+        # single_stock_history = client.getHistoricalPrices(['AAPL'])
+        df = iexdata_client.getDailyHistoricalPrices(['AAPL'], start=None, end=None)
+        # print(single_stock_history)
+        data = self.translateDfToBarDataList('AAPL', df)
+
+        if data:
+            database_manager.save_bar_data(data)
+            return (len(data))
+
+        return 0
+
+    def download_data_from_tiingo(
+            self,
+            symbol: str,
+            interval: Interval,
+            exchange: Exchange,
+            start: datetime):
+
+        format = '%Y-%m-%d'
+
+        if interval is Interval.DAILY:
+            json = tiingo_client.get_ticker_price(symbol,
+                                                  startDate=start.strftime(format),
+                                                  endDate=datetime.today().strftime(format),
+                                                  frequency='daily')
+            data = self.translateJsonToBarDataList(symbol,exchange, json)
+
+        if data:
+            database_manager.save_bar_data(data)
+            return (len(data))
+
+        return 0
+
+
+    def translateJsonToBarDataList(self, symbol,exchange, list)->Optional[List[BarData]]:
+
+        data: List[BarData] = []
+        if list is not None and len(list) != 0:
+            for row in list:
+                dt = datetime.strptime(row['date'], '%Y-%m-%dT%H:%M:%S.%fZ')
+                bar = BarData(
+                    symbol=symbol,
+                    exchange=exchange,
+                    interval=Interval.DAILY,
+                    datetime=dt,
+                    open_price=row["open"],
+                    high_price=row["high"],
+                    low_price=row["low"],
+                    close_price=row["close"],
+                    volume=row["volume"],
+                    open_interest=row.get("open_interest", 0),
+                    gateway_name="tiingo"
+                )
+                data.append(bar)
+        return data
+
+
+
+    def translateDfToBarDataList(self, symbol, df) -> Optional[List[BarData]]:
+        # Only query open interest for futures contract
+        fields = ["open", "high", "low", "close", "volume"]
+
+        data: List[BarData] = []
+
+        if df is not None:
+            for ix, row in df.iterrows():
+                dt = row.name.to_pydatetime()
+
+                bar = BarData(
+                    symbol=symbol,
+                    exchange=Exchange.NASDAQ,
+                    interval=Interval.DAILY,
+                    datetime=dt,
+                    open_price=row["open"],
+                    high_price=row["high"],
+                    low_price=row["low"],
+                    close_price=row["close"],
+                    volume=row["volume"],
+                    open_interest=row.get("open_interest", 0),
+                    gateway_name=""
+                )
+
+                data.append(bar)
+        return data

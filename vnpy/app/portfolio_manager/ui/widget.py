@@ -1,17 +1,15 @@
 from typing import Dict, Tuple, Union
-from vnpy.trader.object import TradeData
+
 from vnpy.event.engine import Event
-from vnpy.trader.ui import QtWidgets, QtCore, QtGui
-
-
 from vnpy.trader.engine import MainEngine, EventEngine
+from vnpy.trader.object import TradeData
+from vnpy.trader.ui import QtWidgets, QtCore, QtGui
 from vnpy.trader.ui.widget import (
     BaseCell,
     EnumCell,
     DirectionCell,
     TimeCell
 )
-
 from ..base import ContractResult, PortfolioResult
 from ..engine import (
     APP_NAME,
@@ -20,7 +18,6 @@ from ..engine import (
     EVENT_TRADE,
     PortfolioEngine
 )
-
 
 RED_COLOR = QtGui.QColor("red")
 GREEN_COLOR = QtGui.QColor("green")

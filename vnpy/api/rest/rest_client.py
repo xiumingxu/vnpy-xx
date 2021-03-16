@@ -4,11 +4,10 @@ from datetime import datetime
 from enum import Enum
 from multiprocessing.dummy import Pool
 from queue import Empty, Queue
-from typing import Any, Callable, Optional, Union, Type
 from types import TracebackType
+from typing import Any, Callable, Optional, Union, Type
 
 import requests
-
 
 CALLBACK_TYPE = Callable[[dict, "Request"], Any]
 ON_FAILED_TYPE = Callable[[int, "Request"], Any]

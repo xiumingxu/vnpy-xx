@@ -1,22 +1,20 @@
+from dataclasses import dataclass
 from datetime import datetime, timedelta
 from typing import Any, Dict
-from dataclasses import dataclass
-import pytz
 
+import pytz
 import quickfix as fix
 
 from vnpy.event import EventEngine, Event
-from vnpy.trader.event import EVENT_TRADE, EVENT_ORDER
-from vnpy.trader.engine import MainEngine
 from vnpy.trader.constant import Exchange, OrderType, Direction, Status, Offset
-from vnpy.trader.utility import extract_vt_symbol, generate_vt_symbol
+from vnpy.trader.engine import MainEngine
+from vnpy.trader.event import EVENT_TRADE, EVENT_ORDER
 from vnpy.trader.object import OrderRequest, OrderData, TradeData, LogData
 from vnpy.trader.setting import SETTINGS
-
+from vnpy.trader.utility import extract_vt_symbol, generate_vt_symbol
 from .base import (
     EVENT_ALGO_PARAMETERS, EVENT_ALGO_VARIABLES, EVENT_ALGO_LOG, APP_NAME
 )
-
 
 CHINA_TZ = pytz.timezone("Asia/Shanghai")
 
@@ -213,7 +211,7 @@ class GenusParentApp(fix.Application):
         message.setField(fix.OrdType(genus_type))
         message.setField(fix.OrderQty(volume))
         message.setField(526, parent_orderid)
-        message.setField(fix.Text("vnpy"))
+        message.setField(fix.Text("vnpy-xx"))
 
         if order_type == OrderType.LIMIT:
             message.setField(fix.Price(price))
@@ -258,7 +256,7 @@ class GenusParentApp(fix.Application):
         message.setField(fix.Symbol(algo_setting["symbol"]))
         message.setField(fix.Side(algo_setting["side"]))
         message.setField(847, algo_setting["algo_type"])
-        message.setField(fix.Text("vnpy"))
+        message.setField(fix.Text("vnpy-xx"))
 
         fix.Session.sendToTarget(message, self.session_id)
 

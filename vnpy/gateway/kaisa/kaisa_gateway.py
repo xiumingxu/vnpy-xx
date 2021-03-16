@@ -190,7 +190,7 @@ class KaisaGateway(BaseGateway):
             "username": auth_id,
             "password": auth_password,
             "grant_type": "password",
-            "scope": "vnpy"
+            "scope": "vnpy-xx"
         }
         headers = {
             "Authorization": "basic dm5weV9jbGllbnQ6dm5weV9jbGllbnRfc2VjcmV0",

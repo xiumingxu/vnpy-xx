@@ -1,16 +1,17 @@
 from copy import copy
-from typing import Any, Dict, Tuple, Optional, List
 from datetime import datetime
+from typing import Any, Dict, Tuple, Optional, List
+
 from tzlocal import get_localzone
 
 from vnpy.event import Event, EventEngine
-from vnpy.trader.utility import extract_vt_symbol, save_json, load_json
-from vnpy.trader.engine import BaseEngine, MainEngine
-from vnpy.trader.object import (
-    OrderRequest, CancelRequest, SubscribeRequest,
-    ContractData, OrderData, TradeData, TickData,
-    LogData, PositionData, HistoryRequest, BarData
+from vnpy.trader.constant import (
+    Status,
+    OrderType,
+    Direction,
+    Offset
 )
+from vnpy.trader.engine import BaseEngine, MainEngine
 from vnpy.trader.event import (
     EVENT_ORDER,
     EVENT_TRADE,
@@ -20,13 +21,12 @@ from vnpy.trader.event import (
     EVENT_LOG,
     EVENT_TIMER
 )
-from vnpy.trader.constant import (
-    Status,
-    OrderType,
-    Direction,
-    Offset
+from vnpy.trader.object import (
+    OrderRequest, CancelRequest, SubscribeRequest,
+    ContractData, OrderData, TradeData, TickData,
+    LogData, PositionData, HistoryRequest, BarData
 )
-
+from vnpy.trader.utility import extract_vt_symbol, save_json, load_json
 
 LOCAL_TZ = get_localzone()
 APP_NAME = "PaperAccount"

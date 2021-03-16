@@ -1,23 +1,22 @@
-import os
 import importlib
+import os
 import traceback
 from datetime import datetime
-from threading import Thread
-from pathlib import Path
 from inspect import getfile
+from pathlib import Path
+from threading import Thread
 
-from vnpy.event import Event, EventEngine
-from vnpy.trader.engine import BaseEngine, MainEngine
-from vnpy.trader.constant import Interval
-from vnpy.trader.utility import extract_vt_symbol
-from vnpy.trader.object import HistoryRequest
-from vnpy.trader.rqdata import rqdata_client
-from vnpy.trader.database import database_manager
 from vnpy.app.cta_strategy import CtaTemplate
 from vnpy.app.cta_strategy.backtesting import (
     BacktestingEngine, OptimizationSetting, BacktestingMode
 )
-
+from vnpy.event import Event, EventEngine
+from vnpy.trader.constant import Interval
+from vnpy.trader.database import database_manager
+from vnpy.trader.engine import BaseEngine, MainEngine
+from vnpy.trader.object import HistoryRequest
+from vnpy.trader.rqdata import rqdata_client
+from vnpy.trader.utility import extract_vt_symbol
 
 APP_NAME = "CtaBacktester"
 
@@ -80,7 +79,7 @@ class BacktesterEngine(BaseEngine):
         app_path = Path(__file__).parent.parent
         path1 = app_path.joinpath("cta_strategy", "strategies")
         self.load_strategy_class_from_folder(
-            path1, "vnpy.app.cta_strategy.strategies")
+            path1, "vnpy-xx.app.cta_strategy.strategies")
 
         path2 = Path.cwd().joinpath("strategies")
         self.load_strategy_class_from_folder(path2, "strategies")

@@ -1,6 +1,6 @@
 """"""
-from typing import Dict
 import importlib
+from typing import Dict
 
 
 class StructGenerator:

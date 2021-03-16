@@ -1,16 +1,15 @@
-from typing import Dict, List
 from datetime import datetime
 from enum import Enum
 from functools import lru_cache
 from parser import expr
+from typing import Dict, List
 
+from vnpy.trader.constant import Direction, Offset, Exchange, Interval
+from vnpy.trader.database import database_manager
 from vnpy.trader.object import (
     TickData, PositionData, TradeData, ContractData, BarData
 )
-from vnpy.trader.constant import Direction, Offset, Exchange, Interval
 from vnpy.trader.utility import floor_to, ceil_to, round_to, extract_vt_symbol
-from vnpy.trader.database import database_manager
-
 
 EVENT_SPREAD_DATA = "eSpreadData"
 EVENT_SPREAD_POS = "eSpreadPos"

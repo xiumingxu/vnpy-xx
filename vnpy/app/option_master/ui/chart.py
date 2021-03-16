@@ -1,16 +1,15 @@
 from typing import Dict, List
 
+import matplotlib
+import numpy as np
 import pyqtgraph as pg
 
-from vnpy.trader.ui import QtWidgets, QtCore
 from vnpy.trader.event import EVENT_TIMER
-
+from vnpy.trader.ui import QtWidgets, QtCore
 from ..base import PortfolioData
 from ..engine import OptionEngine, Event
 from ..time import ANNUAL_DAYS
 
-import numpy as np
-import matplotlib
 matplotlib.use('Qt5Agg')    # noqa
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas  # noqa

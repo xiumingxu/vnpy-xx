@@ -448,7 +448,7 @@ class TdApi:
             self.connection = py_t2sdk.pyConnectionInterface(self.config)
 
             async_callback = py_t2sdk.pyCallbackInterface(
-                "vnpy.gateway.hsoption.hsoption_gateway",
+                "vnpy-xx.gateway.hsoption.hsoption_gateway",
                 "TdAsyncCallback"
             )
             async_callback.InitInstance()
@@ -862,7 +862,7 @@ class TdApi:
         """"""
         # Create subscrbe callback
         sub_callback = py_t2sdk.pySubCallBack(
-            "vnpy.gateway.hsoption.hsoption_gateway",
+            "vnpy-xx.gateway.hsoption.hsoption_gateway",
             "TdSubCallback"
         )
         sub_callback.initInstance()

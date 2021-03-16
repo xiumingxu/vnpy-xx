@@ -3,11 +3,10 @@ from datetime import datetime
 from threading import Thread
 
 from vnpy.event import Event, EventEngine
-from vnpy.trader.engine import BaseEngine, MainEngine
 from vnpy.trader.constant import Interval
+from vnpy.trader.engine import BaseEngine, MainEngine
 from vnpy.trader.object import HistoryRequest, ContractData
 from vnpy.trader.rqdata import rqdata_client
-
 
 APP_NAME = "ChartWizard"
 

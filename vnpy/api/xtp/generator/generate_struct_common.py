@@ -1,6 +1,6 @@
 """"""
-from typing import Dict, List
 import os
+from typing import Dict, List
 
 type_dict = {
     'uint64_t': 'int',

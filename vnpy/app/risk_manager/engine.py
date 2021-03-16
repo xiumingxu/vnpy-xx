@@ -1,13 +1,13 @@
 """"""
 
 from collections import defaultdict
-from vnpy.trader.object import OrderRequest, LogData
+
 from vnpy.event import Event, EventEngine, EVENT_TIMER
+from vnpy.trader.constant import Status
 from vnpy.trader.engine import BaseEngine, MainEngine
 from vnpy.trader.event import EVENT_TRADE, EVENT_ORDER, EVENT_LOG
-from vnpy.trader.constant import Status
+from vnpy.trader.object import OrderRequest, LogData
 from vnpy.trader.utility import load_json, save_json
-
 
 APP_NAME = "RiskManager"
 

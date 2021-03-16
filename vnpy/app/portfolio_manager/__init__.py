@@ -1,7 +1,6 @@
 from pathlib import Path
 
 from vnpy.trader.app import BaseApp
-
 from .engine import PortfolioEngine, APP_NAME
 
 

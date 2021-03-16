@@ -3,13 +3,13 @@ Widget for algo trading.
 """
 
 import csv
-from functools import partial
 from datetime import datetime
+from functools import partial
 
 from vnpy.event import EventEngine, Event
 from vnpy.trader.engine import MainEngine
 from vnpy.trader.ui import QtWidgets, QtCore
-
+from .display import NAME_DISPLAY_MAP
 from ..engine import (
     AlgoEngine,
     AlgoTemplate,
@@ -19,7 +19,6 @@ from ..engine import (
     EVENT_ALGO_VARIABLES,
     EVENT_ALGO_SETTING
 )
-from .display import NAME_DISPLAY_MAP
 
 
 class AlgoWidget(QtWidgets.QWidget):
